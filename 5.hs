@@ -1,9 +1,9 @@
 
-myReverseBase :: [a] -> Int -> [a]
-myReverseBase xs 0 = xs
-myReverseBase (x:xs) n = myReverseBase ((head xs):[]) (n - 1)
+myReverseBase :: [a] -> [a] -> [a]
+myReverseBase [] xs = xs
+myReverseBase xs ys = myReverseBase (init xs) (ys ++ [last xs])
 
 myReverse :: [a] -> [a]
-myReverse xs = myReverseBase xs (length xs)
+myReverse xs = myReverseBase xs []
 
 
