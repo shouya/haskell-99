@@ -7,3 +7,6 @@ isPalindrome (x:xs)  = if x == (last xs) then
                    else
                        False
 
+isPalindrome' :: (Eq a) => [a] -> Bool
+isPalindrome' xs = xs == reverse xs
+
