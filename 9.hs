@@ -1,6 +1,8 @@
 
 
 pack :: (Eq a) => [a] -> [[a]]
+pack []     = []
+pack [x]    = [[x]]
 pack (x:xs) = pack' xs x [] []
     where
         pack' [y]    hold buffer result =
